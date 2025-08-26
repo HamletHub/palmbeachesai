@@ -5,33 +5,36 @@ import { CheckCircle, Target, TrendingUp, Users } from 'lucide-react';
 const solutionsData = [
   {
     icon: Target,
-    title: "Strategic AI Alignment",
-    description: "We begin every project by mapping AI capabilities to your specific business objectives, ensuring measurable impact from day one.",
+    title: "Smart Process Automation",
+    description: "Eliminate repetitive tasks and let your team focus on what matters most.",
     features: [
-      "Business case development",
-      "ROI framework design", 
-      "Success metrics definition"
-    ]
+      "SMB's report average time savings of over 50% on tasks by using AI agents",
+      "Free up employee time for strategic work - Teams report saving 30-40 minutes daily on repetitive tasks", 
+      "Automated appointment scheduling lets customers book services any time without staff involvement. A hair salon saw 30% more bookings and eliminated phone tag by letting clients schedule online through AI chat.."
+    ],
+    realLifeSolution: "A small accounting firm implemented an AI invoicing system that automatically extracts client data, matches payments, and flags exceptions—saving 10 hours of manual work per week and eliminating invoice errors"
   },
   {
     icon: TrendingUp,
-    title: "Data Excellence Program",
-    description: "Our comprehensive data audit and preparation process ensures your AI models are built on a foundation of high-quality, relevant data.",
+    title: "Better customer service without hiring more staff",
+    description: "Simple chatbots answer common questions instantly, like business hours, pricing, or appointment booking. A local dental practice reduced phone calls by 40% and freed up front desk staff for higher-value tasks using a $50/month chatbot. Restaurants report 25% fewer what time do you close calls after adding basic website chat.",
     features: [
-      "Data quality assessment",
-      "Pipeline optimization",
-      "Governance framework"
-    ]
+      "Resolve 30–50% of common inquiries instantly with AI chatbots",
+      "Reduce support costs by 30–50% by automating routine tasks",
+      "Boost customer satisfaction by 20–30% with faster, more accurate responses"
+    ],
+    realLifeSolution: "A boutique e-commerce store used an AI chatbot (ManyChat) to handle order tracking and product FAQs. Within three months, 40% of chat requests were fully automated, leading to a 15% jump in repeat purchases."
   },
   {
     icon: Users,
-    title: "Seamless Integration",
-    description: "We ensure smooth deployment and adoption through proven change management and integration methodologies that minimize disruption.",
+    title: "Data-Driven Decision Making",
+    description: "Make informed choices based on real-time insights and analytics",
     features: [
-      "Workflow integration",
-      "Team training programs",
-      "Ongoing support"
-    ]
+      "Forecast demand to reduce excess inventory by 15% and stockouts by 10%",
+      "Identify top-selling products and optimize pricing in real time",
+      "Uncover new revenue opportunities from hidden customer patterns"
+    ],
+    realLifeSolution: "A local retailer deployed an AI demand-forecasting model that analyzed sales, seasonality, and promotions. Over six months, they cut overstock by 15% and stockouts by 10%, improving both cash flow and customer satisfaction."
   }
 ];
 
@@ -44,10 +47,10 @@ export function SolutionsCards() {
             Our Solutions
           </Badge>
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
-            Three Solutions That Guarantee ROI
+            Three Ways Companies are Winning with AI
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Our proven methodology addresses each failure point with strategic precision
+          Simple AI that actually works: Practical strategies with proven track records and guaranteed ROI
           </p>
         </div>
 
@@ -64,13 +67,18 @@ export function SolutionsCards() {
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     {solution.description}
                   </p>
-                  <div className="space-y-2 text-left">
+                  <div className="space-y-2 text-left mb-6">
                     {solution.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center">
                         <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
                         <span className="text-sm text-muted-foreground">{feature}</span>
                       </div>
                     ))}
+                  </div>
+                  <div className="bg-accent/5 p-4 rounded-lg text-left">
+                    <p className="text-sm text-muted-foreground italic">
+                      <strong className="text-accent font-medium">Real-world success:</strong> {solution.realLifeSolution}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
