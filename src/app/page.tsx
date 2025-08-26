@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { EmailReveal } from '@/components/EmailReveal';
 import { CheckCircle, XCircle, ArrowRight, TrendingUp, Users, Target } from 'lucide-react';
 import { ProblemCards } from '@/components/ProblemCards';
+import { SolutionsCards } from '@/components/SolutionsCards';
 
 export default function Home() {
   return (
@@ -66,105 +67,7 @@ export default function Home() {
       {/* Problem Statement */}
       <ProblemCards />
 
-      {/* Solutions Section */}
-      <section id="solutions" className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge variant="default" className="mb-6 px-4 py-2 text-sm font-medium bg-accent text-accent-foreground">
-              Our Solutions
-            </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
-              Three Solutions That Guarantee ROI
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our proven methodology addresses each failure point with strategic precision
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Target className="h-8 w-8 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Strategic AI Alignment</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  We begin every project by mapping AI capabilities to your specific business 
-                  objectives, ensuring measurable impact from day one.
-                </p>
-                <div className="space-y-2 text-left">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Business case development</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">ROI framework design</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Success metrics definition</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="h-8 w-8 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Data Excellence Program</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Our comprehensive data audit and preparation process ensures your AI 
-                  models are built on a foundation of high-quality, relevant data.
-                </p>
-                <div className="space-y-2 text-left">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Data quality assessment</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Pipeline optimization</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Governance framework</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-8 w-8 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Seamless Integration</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  We ensure smooth deployment and adoption through proven change management 
-                  and integration methodologies that minimize disruption.
-                </p>
-                <div className="space-y-2 text-left">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Workflow integration</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Team training programs</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Ongoing support</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <SolutionsCards />
 
       {/* About Section */}
       <section id="about" className="py-20 bg-muted/30">

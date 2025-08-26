@@ -8,16 +8,16 @@ interface ProblemCard {
 
 const problemCards: ProblemCard[] = [
   {
-    title: "Lack of Strategic Alignment",
-    description: "AI initiatives launched without clear business objectives or measurable outcomes, leading to solutions that don't address real problems."
+    title: "Solving the wrong problem",
+    description: "Automating processes that don't save money or add value"
   },
   {
-    title: "Poor Data Foundation",
-    description: "Insufficient, low-quality, or improperly prepared data that makes AI models unreliable and business insights meaningless."
+    title: "Poor customer experience",
+    description: "Using AI for customer service with incomplete data, frustrating users instead of helping them"
   },
   {
-    title: "Implementation Gaps",
-    description: "Failure to integrate AI solutions into existing workflows and lack of change management for successful adoption."
+    title: "Bad data quality",
+    description: "AI decisions are only as good as the data they're based on—garbage in, garbage out"
   }
 ];
 
