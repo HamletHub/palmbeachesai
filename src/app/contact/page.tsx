@@ -1,0 +1,97 @@
+'use client';
+
+import { ContactForm } from '@/components/ContactForm';
+import { Logo } from '@/components/Logo';
+import { Button } from '@/components/ui/button';
+import { EmailReveal } from '@/components/EmailReveal';
+
+export default function ContactPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="border-b border-border sticky top-0 bg-white/95 backdrop-blur-sm z-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex justify-between items-center h-30 py-8">
+            <Logo variant="horizontal" size="md" logoPosition="left" />
+            <div className="hidden md:flex space-x-8">
+              <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
+                Home
+              </a>
+              <a href="/#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
+                Solutions
+              </a>
+              <a href="/contact" className="text-sm text-primary font-medium">
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Contact Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+              Contact Us
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Ready to transform your business with AI? Get in touch and let's discuss how we can help you achieve guaranteed ROI.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold text-primary mb-4">
+                  Let's Start a Conversation
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  We understand that every business is unique. That's why we take the time to understand your specific challenges and goals before recommending any AI solutions.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-primary mb-2">What to Expect</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Free consultation to assess your AI readiness</li>
+                    <li>• Custom roadmap tailored to your business goals</li>
+                    <li>• Clear ROI projections and timeline</li>
+                    <li>• No obligation - just expert guidance</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-primary mb-2">Contact Information</h3>
+                  <div className="space-y-2 text-muted-foreground">
+                    <div>
+                      <p className="font-medium">Address:</p>
+                      <p>340 Royal Poinciana Way</p>
+                      <p>Suite #328 - 403</p>
+                      <p>Palm Beach, FL 33480</p>
+                    </div>
+                    <div>
+                      <p className="font-medium">Phone:</p>
+                      <p>561-220-7004</p>
+                    </div>
+                    <div>
+                      <p className="font-medium">Email:</p>
+                      <p><EmailReveal user="info" domain="palmbeachesai.com" /></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="flex justify-center lg:justify-end">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

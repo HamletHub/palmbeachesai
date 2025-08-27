@@ -1,9 +1,12 @@
+'use client';
+
 import { Logo } from '@/components/Logo';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { EmailReveal } from '@/components/EmailReveal';
 import { CheckCircle, XCircle, ArrowRight, TrendingUp, Users, Target } from 'lucide-react';
+import Image from 'next/image';
 import { ProblemCards } from '@/components/ProblemCards';
 import { SolutionsCards } from '@/components/SolutionsCards';
 
@@ -15,18 +18,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-30 py-8">
             <Logo variant="horizontal" size="md" logoPosition="left" />
-            <div className="hidden md:flex space-x-8">
-              <a href="#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
-                Solutions
-              </a>
-              <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
-                About
-              </a>
-              <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
-                Contact
-              </a>
-            </div>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium">
+            <Button 
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
+              onClick={() => window.open('/contact', '_blank')}
+            >
               Get Started
             </Button>
           </div>
@@ -34,7 +29,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
+      <section className="relative pt-24 lg:pt-32 pb-12 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/5"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -51,7 +46,7 @@ export default function Home() {
               There are <strong className="text-primary">three critical reasons</strong> for this failure rate, 
               and <strong className="text-accent">three proven solutions</strong> that guarantee ROI.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+{/*             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-4 font-semibold">
                 Discover the Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -60,7 +55,7 @@ export default function Home() {
                 Schedule Consultation
               </Button>
             </div>
-          </div>
+ */}          </div>
         </div>
       </section>
 
@@ -110,34 +105,16 @@ export default function Home() {
               </div>
             </div>
             
-            <Card className="border-accent/20">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-10 w-10 text-accent" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary">Ken Ducey, Jr.</h3>
-                  <p className="text-accent font-medium">Founder & CEO</p>
-                </div>
-                <p className="text-muted-foreground text-center leading-relaxed mb-6">
-                  With extensive experience in AI strategy and implementation, Ken leads 
-                  Palm Beaches AI&apos;s mission to ensure every AI project delivers measurable 
-                  business value.
-                </p>
-                <div className="border-t border-border pt-6">
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Email:</span>
-                      <EmailReveal user="info" domain="PalmBeachesAI.com" className="text-primary font-medium" />
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Phone:</span>
-                      <span className="text-primary font-medium">561-220-7004</span>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/images/accentureaimaturity.png"
+                alt="AI Success and Maturity Framework"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -152,13 +129,15 @@ export default function Home() {
             Don&apos;t become another AI failure statistic. Let&apos;s discuss how our proven 
             methodology can ensure your AI project delivers the results you need.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-4 font-semibold">
+          <div className="flex justify-center">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="text-lg px-8 py-4 font-semibold"
+              onClick={() => window.open('/contact', '_blank')}
+            >
               Schedule Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 font-semibold border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              Download ROI Framework
             </Button>
           </div>
         </div>
@@ -201,7 +180,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Palm Beaches AI. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Palm Beaches AI. All rights reserved.</p>
           </div>
         </div>
       </footer>

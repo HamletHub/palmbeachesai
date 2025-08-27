@@ -10,17 +10,17 @@ const solutionsData = [
     features: [
       "SMB's report average time savings of over 50% on tasks by using AI agents",
       "Free up employee time for strategic work - Teams report saving 30-40 minutes daily on repetitive tasks", 
-      "Automated appointment scheduling lets customers book services any time without staff involvement. A hair salon saw 30% more bookings and eliminated phone tag by letting clients schedule online through AI chat.."
+      "Reduce support costs by 30–50% by automating routine tasks"
     ],
-    realLifeSolution: "A small accounting firm implemented an AI invoicing system that automatically extracts client data, matches payments, and flags exceptions—saving 10 hours of manual work per week and eliminating invoice errors"
+    realLifeSolution: "A multi-location accounting firm implemented an AI invoicing system that automatically extracts client data, matches payments, and flags exceptions—reducing manual work by 16% and eliminating invoice errors"
   },
   {
     icon: TrendingUp,
     title: "Better customer service without hiring more staff",
-    description: "Simple chatbots answer common questions instantly, like business hours, pricing, or appointment booking. A local dental practice reduced phone calls by 40% and freed up front desk staff for higher-value tasks using a $50/month chatbot. Restaurants report 25% fewer what time do you close calls after adding basic website chat.",
+    description: "Simple chatbots answer common questions and schedule appointments instantly",
     features: [
       "Resolve 30–50% of common inquiries instantly with AI chatbots",
-      "Reduce support costs by 30–50% by automating routine tasks",
+      "Automated appointment scheduling lets customers book services any time without staff involvement",
       "Boost customer satisfaction by 20–30% with faster, more accurate responses"
     ],
     realLifeSolution: "A boutique e-commerce store used an AI chatbot (ManyChat) to handle order tracking and product FAQs. Within three months, 40% of chat requests were fully automated, leading to a 15% jump in repeat purchases."

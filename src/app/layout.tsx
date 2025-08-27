@@ -16,6 +16,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Palm Beaches AI",
   description: "AI solutions that guarantee measurable business value and ROI",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    title: "PalmBeachesAI",
+    capable: true,
+    statusBarStyle: "default",
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="PalmBeachesAI" />
+      </head>
       <body
         className={`${lexendDeca.variable} ${geistMono.variable} antialiased`}
       >
