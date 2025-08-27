@@ -2,10 +2,9 @@
 
 import { Logo } from '@/components/Logo';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { EmailReveal } from '@/components/EmailReveal';
-import { CheckCircle, XCircle, ArrowRight, TrendingUp, Users, Target } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { ProblemCards } from '@/components/ProblemCards';
 import { SolutionsCards } from '@/components/SolutionsCards';

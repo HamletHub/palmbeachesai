@@ -55,7 +55,7 @@ export function SolutionsCards() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {solutionsData.map((solution, index) => {
+          {solutionsData.map((solution) => {
             const IconComponent = solution.icon;
             return (
               <Card key={solution.title} className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">

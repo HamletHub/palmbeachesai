@@ -2,8 +2,8 @@
 
 import { ContactForm } from '@/components/ContactForm';
 import { Logo } from '@/components/Logo';
-import { Button } from '@/components/ui/button';
 import { EmailReveal } from '@/components/EmailReveal';
+import Link from 'next/link';
 
 export default function ContactPage() {
   return (
@@ -14,12 +14,12 @@ export default function ContactPage() {
           <div className="flex justify-between items-center h-30 py-8">
             <Logo variant="horizontal" size="md" logoPosition="left" />
             <div className="hidden md:flex space-x-8">
-              <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
+              <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
                 Home
-              </a>
-              <a href="/#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
+              </Link>
+              <Link href="/#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
                 Solutions
-              </a>
+              </Link>
               <a href="/contact" className="text-sm text-primary font-medium">
                 Contact
               </a>
@@ -36,7 +36,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Ready to transform your business with AI? Get in touch and let's discuss how we can help you achieve guaranteed ROI.
+              Ready to transform your business with AI? Get in touch and let&apos;s discuss how we can help you achieve guaranteed ROI.
             </p>
           </div>
 
@@ -45,10 +45,10 @@ export default function ContactPage() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-primary mb-4">
-                  Let's Start a Conversation
+                  Let&apos;s Start a Conversation
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  We understand that every business is unique. That's why we take the time to understand your specific challenges and goals before recommending any AI solutions.
+                  We understand that every business is unique. That&apos;s why we take the time to understand your specific challenges and goals before recommending any AI solutions.
                 </p>
               </div>
 
