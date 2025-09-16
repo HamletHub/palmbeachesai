@@ -1,9 +1,9 @@
 'use client';
 
-import { Logo } from '@/components/Logo';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { 
   Target, 
@@ -13,7 +13,6 @@ import {
   BarChart3, 
   Users, 
   Clock,
-  Phone,
   MapPin,
   Building2,
   MessageSquare,
@@ -26,49 +25,7 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-background/95 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo and Motto */}
-            <div className="flex items-center gap-3">
-              <Logo variant="horizontal" size="lg" logoPosition="left" />
-              <div className="text-lg font-bold text-accent">
-                AI → ROI
-              </div>
-            </div>
-            
-            {/* Center Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#about" className="text-muted-foreground hover:text-foreground font-medium transition-colors">
-                About
-              </a>
-              <a href="#blog" className="text-muted-foreground hover:text-foreground font-medium transition-colors">
-                Blog
-              </a>
-              <a href="#contact" className="text-muted-foreground hover:text-foreground font-medium transition-colors">
-                Contact
-              </a>
-            </nav>
-            
-            {/* Right Side - Phone and CTA */}
-            <div className="flex items-center gap-4">
-              <div className="hidden md:flex items-center gap-2 text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <a href="tel:561-220-7004" className="hover:text-foreground font-medium transition-colors">
-                  (561) 220-7004
-                </a>
-              </div>
-              <Button 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
-                onClick={() => window.open('/contact', '_blank')}
-              >
-                Get Your Free ROI Assessment
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">

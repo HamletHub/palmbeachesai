@@ -1,32 +1,13 @@
 'use client';
 
 import { ContactForm } from '@/components/ContactForm';
-import { Logo } from '@/components/Logo';
 import { EmailReveal } from '@/components/EmailReveal';
-import Link from 'next/link';
+import { Header } from '@/components/Header';
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="border-b border-border sticky top-0 bg-white/95 backdrop-blur-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-30 py-8">
-            <Logo variant="horizontal" size="md" logoPosition="left" />
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
-                Home
-              </Link>
-              <Link href="/#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
-                Solutions
-              </Link>
-              <a href="/contact" className="text-sm text-primary font-medium">
-                Contact
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header hideContactNav={true} hideCtaButton={true} currentPage="contact" />
 
       {/* Contact Section */}
       <section className="py-20">
