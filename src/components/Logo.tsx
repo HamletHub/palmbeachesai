@@ -17,11 +17,22 @@ export function Logo({
     lg: 'w-48 h-48'
   };
 
+  // Size-based dimensions for horizontal logos
+  const horizontalSizes = {
+    sm: { width: 40, height: 13 },
+    md: { width: 120, height: 40 },
+    lg: { width: 180, height: 60 }
+  };
+
   const containerClasses = {
     left: 'justify-start',
     center: 'justify-center',
     right: 'justify-end'
   };
+
+  const imageDimensions = variant === 'horizontal' 
+    ? horizontalSizes[size]
+    : { width: 80, height: 80 };
 
   return (
     <div className={`flex items-center gap-3 ${containerClasses[logoPosition]}`}>
@@ -31,8 +42,8 @@ export function Logo({
       <Image
         src="/images/pbailogo.svg"
         alt="Palm Beaches AI"
-        width={variant === 'horizontal' ? 120 : 80}
-        height={variant === 'horizontal' ? 40 : 80}
+        width={imageDimensions.width}
+        height={imageDimensions.height}
         className={variant === 'vertical' ? sizeClasses[size] : ''}
       />
     </div>
