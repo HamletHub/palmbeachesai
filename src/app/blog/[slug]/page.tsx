@@ -22,9 +22,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getPostData(params.slug);
-
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostData(slug);
+  
   return (
     <div className="min-h-screen bg-background">
       <Header currentPage="blog" />
