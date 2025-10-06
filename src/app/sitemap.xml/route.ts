@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as matter from 'gray-matter';
+import matter from 'gray-matter';
 
 const baseUrl = 'https://palmbeachesai.com';
 
