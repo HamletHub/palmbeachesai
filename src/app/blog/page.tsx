@@ -4,12 +4,27 @@ import { Footer } from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+import {
+  generateBreadcrumbListSchema,
+  renderJSONLD
+} from '@/lib/schemas';
 
 export default function BlogPage() {
   const posts = getSortedPostsData();
 
+  const breadcrumbSchema = generateBreadcrumbListSchema([
+    { name: "Home", url: "https://palmbeachesai.com" },
+    { name: "Blog", url: "https://palmbeachesai.com/blog" }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(breadcrumbSchema)
+        }}
+      />
       <Header currentPage="blog" />
 
       {/* Blog Header */}
