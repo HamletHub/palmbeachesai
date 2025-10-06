@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block access to admin and private areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://palmbeachesai.com/sitemap.xml
+
+# Crawl delay to be respectful to server resources
+Crawl-delay: 1
