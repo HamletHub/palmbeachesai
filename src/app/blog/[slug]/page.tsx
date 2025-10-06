@@ -8,12 +8,12 @@ import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import {
+  generateArticleSchema,
+  generateBreadcrumbListSchema,
+  renderJSONLD
+} from '@/lib/schemas';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
 
 export async function generateStaticParams() {
   const paths = getAllPostSlugs();
@@ -25,9 +25,37 @@ export async function generateStaticParams() {
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostData(slug);
-  
+
+  const articleSchema = generateArticleSchema(
+    post.title,
+    post.excerpt,
+    post.author || 'Palm Beaches AI Team',
+    post.date,
+    post.date, // Using published date as modified date if no separate modified date
+    slug,
+    post.tags
+  );
+
+  const breadcrumbSchema = generateBreadcrumbListSchema([
+    { name: "Home", url: "https://palmbeachesai.com" },
+    { name: "Blog", url: "https://palmbeachesai.com/blog" },
+    { name: post.title, url: `https://palmbeachesai.com/blog/${slug}` }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(articleSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(breadcrumbSchema)
+        }}
+      />
       <Header currentPage="blog" />
 
       <article className="py-16">

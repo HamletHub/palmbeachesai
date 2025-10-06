@@ -3,10 +3,42 @@
 import { ContactForm } from '@/components/ContactForm';
 import { EmailReveal } from '@/components/EmailReveal';
 import { Header } from '@/components/Header';
+import {
+  generateOrganizationSchema,
+  generateLocalBusinessSchema,
+  generateBreadcrumbListSchema,
+  renderJSONLD
+} from '@/lib/schemas';
 
 export default function ContactPage() {
+  const organizationSchema = generateOrganizationSchema();
+  const localBusinessSchema = generateLocalBusinessSchema();
+
+  const breadcrumbSchema = generateBreadcrumbListSchema([
+    { name: "Home", url: "https://palmbeachesai.com" },
+    { name: "Contact", url: "https://palmbeachesai.com/contact" }
+  ]);
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(organizationSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(localBusinessSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(breadcrumbSchema)
+        }}
+      />
       <Header hideContactNav={true} hideCtaButton={true} currentPage="contact" />
 
       {/* Contact Section */}

@@ -5,6 +5,12 @@ import { Footer } from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+  generateOrganizationSchema,
+  generateBreadcrumbListSchema,
+  generateFAQPageSchema,
+  renderJSONLD
+} from '@/lib/schemas';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -21,8 +27,52 @@ import {
 } from 'lucide-react';
 
 export default function AboutPage() {
+  const organizationSchema = generateOrganizationSchema();
+
+  const breadcrumbSchema = generateBreadcrumbListSchema([
+    { name: "Home", url: "https://palmbeachesai.com" },
+    { name: "About", url: "https://palmbeachesai.com/about" }
+  ]);
+
+  const faqSchema = generateFAQPageSchema([
+    {
+      question: "What makes Palm Beaches AI different from other AI consultants?",
+      answer: "We have a proven business-first approach with 94% success rate and 312% average ROI. Our founder brings unique experience from building America's only profitable scalable community media platform and leading operations for publicly traded companies."
+    },
+    {
+      question: "What is the ROI-First Framework™?",
+      answer: "Our proven methodology that starts with your business outcomes and works backward to the right AI solution. This approach ensures every AI investment delivers measurable value rather than just implementing technology for technology's sake."
+    },
+    {
+      question: "Who do you typically work with?",
+      answer: "We specialize in Palm Beach County mid-market businesses with $10M-$500M revenue, professional services firms, and growth-focused leaders who understand that properly implemented AI creates sustainable competitive advantages."
+    },
+    {
+      question: "What kind of experience does your team have?",
+      answer: "Our founder has 13 years of AI-driven system development, built proprietary AI systems processing 100,000+ data sources, led operations for publicly traded companies, and holds IBM and AWS AI certifications."
+    }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(organizationSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(breadcrumbSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderJSONLD(faqSchema)
+        }}
+      />
       <Header currentPage="about" />
 
       {/* Hero Section */}
