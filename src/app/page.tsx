@@ -15,6 +15,7 @@ import {
   generateBreadcrumbListSchema,
   renderJSONLD
 } from '@/lib/schemas';
+import { trackEvent, trackBusinessGoal } from '@/components/GoogleTagManager';
 import { 
   Target, 
   Shield, 
@@ -165,10 +166,18 @@ export default function Home() {
             
             {/* CTA Section */}
             <div className="flex flex-col items-center gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-4 text-lg"
-                onClick={() => window.open('/contact', '_blank')}
+                onClick={() => {
+                  trackEvent('cta_click', {
+                    cta_location: 'hero_section',
+                    cta_text: 'Get Your Free ROI Assessment',
+                    estimated_value: 2500
+                  });
+                  trackBusinessGoal('roi_assessment_interest', 2500);
+                  window.open('/contact', '_blank');
+                }}
               >
                 Get Your Free ROI Assessment
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -848,10 +857,18 @@ export default function Home() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-4"
-                  onClick={() => window.open('/contact', '_blank')}
+                  onClick={() => {
+                    trackEvent('cta_click', {
+                      cta_location: 'final_section',
+                      cta_text: 'Get Your Free ROI Assessment',
+                      estimated_value: 2500
+                    });
+                    trackBusinessGoal('roi_assessment_interest', 2500);
+                    window.open('/contact', '_blank');
+                  }}
                 >
                   Get Your Free ROI Assessment
                   <ArrowRight className="w-5 h-5 ml-2" />

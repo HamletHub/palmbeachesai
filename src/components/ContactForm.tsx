@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
+import { trackFormSubmit, trackBusinessGoal } from './GoogleTagManager';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,12 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    // Track form submission attempt
+    trackFormSubmit('contact_form', {
+      form_location: 'contact_page',
+      lead_source: 'website'
+    });
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -31,12 +38,34 @@ export function ContactForm() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
+
+        // Track successful form submission as business goal
+        trackBusinessGoal('lead_generated', 1);
+
+        // Track conversion event
+        trackFormSubmit('contact_form_success', {
+          form_location: 'contact_page',
+          lead_value: 2500, // estimated value based on your ROI assessment
+          conversion_type: 'contact'
+        });
       } else {
         setSubmitStatus('error');
+
+        // Track form submission error
+        trackFormSubmit('contact_form_error', {
+          form_location: 'contact_page',
+          error_type: 'server_error'
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
+
+      // Track form submission error
+      trackFormSubmit('contact_form_error', {
+        form_location: 'contact_page',
+        error_type: 'network_error'
+      });
     } finally {
       setIsSubmitting(false);
     }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lexend_Deca, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 
 const lexendDeca = Lexend_Deca({
   variable: "--font-lexend-deca",
@@ -37,6 +38,8 @@ export default function RootLayout({
       <body
         className={`${lexendDeca.variable} ${geistMono.variable} antialiased`}
       >
+        <GoogleTagManagerNoScript gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
         {children}
       </body>
     </html>
