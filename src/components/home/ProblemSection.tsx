@@ -1,66 +1,16 @@
 "use client"
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { useState, useEffect, useRef } from "react"
-
-// Custom hook for counting animation
-function useCountUp(end: number, duration = 2000, shouldStart = false, delay = 0) {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    if (!shouldStart) return
-
-    const timeout = setTimeout(() => {
-      const startTime = Date.now()
-      const timer = setInterval(() => {
-        const elapsed = Date.now() - startTime
-        const progress = Math.min(elapsed / duration, 1)
-
-        // Easing function for smooth animation
-        const easeOutQuart = 1 - Math.pow(1 - progress, 4)
-        const current = Math.round(easeOutQuart * end)
-
-        setCount(current)
-
-        if (progress === 1) {
-          clearInterval(timer)
-          setCount(end) // Ensure we end at exact value
-        }
-      }, 16)
-
-      return () => clearInterval(timer)
-    }, delay)
-
-    return () => clearTimeout(timeout)
-  }, [end, duration, shouldStart, delay])
-
-  return count
-}
+import { useState } from "react"
+import { useIntersectionObserver } from "@/lib/useIntersectionObserver"
+import { useCountUp } from "@/lib/useCountUp"
 
 export function ProblemSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.2 })
   const [flippedCard, setFlippedCard] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
 
   // Animated counter for 85%
   const failureRate = useCountUp(85, 2000, isVisible, 300)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const problems = [
     {

@@ -1,65 +1,11 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { useEffect, useRef, useState } from "react"
-
-function useCountUp(end: number, duration = 2000, shouldStart = false, delay = 0) {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    if (!shouldStart) return
-
-    const delayTimeout = setTimeout(() => {
-      let startTime: number | null = null
-      const startValue = 0
-
-      const animate = (currentTime: number) => {
-        if (!startTime) startTime = currentTime
-        const progress = Math.min((currentTime - startTime) / duration, 1)
-
-        const easeOutQuart = 1 - Math.pow(1 - progress, 4)
-        const currentValue = easeOutQuart * (end - startValue) + startValue
-
-        if (progress === 1) {
-          setCount(end)
-        } else {
-          setCount(Math.round(currentValue))
-        }
-
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        }
-      }
-
-      requestAnimationFrame(animate)
-    }, delay)
-
-    return () => clearTimeout(delayTimeout)
-  }, [end, duration, shouldStart, delay])
-
-  return count
-}
+import { useIntersectionObserver } from "@/lib/useIntersectionObserver"
+import { useCountUp } from "@/lib/useCountUp"
 
 export function SocialProofSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.2 })
 
   const timeSavings = useCountUp(50, 2000, isVisible, 0)
   const supportMin = useCountUp(30, 2000, isVisible, 700)
@@ -67,7 +13,11 @@ export function SocialProofSection() {
   const inventory = useCountUp(15, 2000, isVisible, 1400)
 
   return (
-    <section className="py-16 bg-muted/30" ref={sectionRef}>
+    <section
+      className="py-16 bg-muted/30"
+      ref={sectionRef}
+      style={{ willChange: isVisible ? "auto" : "opacity, transform" }}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl lg:text-3xl font-bold text-primary mb-4">
