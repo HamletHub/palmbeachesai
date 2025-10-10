@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://palmbeachesai.com'),
   title: {
-    default: "Palm Beaches AI - AI Solutions with Guaranteed ROI",
+    default: "Palm Beach AI - AI Solutions with Guaranteed ROI",
     template: "%s | Palm Beaches AI"
   },
   description: "AI solutions that guarantee measurable business value and ROI. Serving Palm Beach County mid-market companies with AI automation and software development.",
@@ -36,20 +36,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://palmbeachesai.com",
     siteName: "Palm Beaches AI",
-    title: "Palm Beaches AI - AI Solutions with Guaranteed ROI",
+    title: "Palm Beach AI - AI Solutions with Guaranteed ROI",
     description: "AI solutions that guarantee measurable business value and ROI for Palm Beach County businesses.",
     images: [
       {
         url: "/images/clearoffice.png",
         width: 1200,
         height: 630,
-        alt: "Palm Beaches AI - AI Solutions with Guaranteed ROI",
+        alt: "Palm Beach AI - AI Solutions with Guaranteed ROI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Palm Beaches AI - AI Solutions with Guaranteed ROI",
+    title: "Palm Beach AI - AI Solutions with Guaranteed ROI",
     description: "AI solutions that guarantee measurable business value and ROI for Palm Beach County businesses.",
     images: ["/images/clearoffice.png"],
   },
