@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     default: "Palm Beaches AI - AI Solutions with Guaranteed ROI",
     template: "%s | Palm Beaches AI"
   },
-  description: "AI solutions that guarantee measurable business value and ROI. Serving Palm Beach County mid-market companies with proven AI automation, customer experience, and data analytics.",
-  keywords: ["AI solutions", "Palm Beach AI", "AI consulting", "AI automation", "ROI guarantee", "Palm Beach County", "AI implementation"],
+  description: "AI solutions that guarantee measurable business value and ROI. Serving Palm Beach County mid-market companies with AI automation and software development.",
+  keywords: ["AI solutions", "Palm Beach AI", "AI consulting", "AI automation", "Software development", "Palm Beach County", "Artificial Intelligence"],
   authors: [{ name: "Palm Beaches AI" }],
   creator: "Palm Beaches AI",
   publisher: "Palm Beaches AI",
