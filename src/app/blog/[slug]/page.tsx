@@ -109,15 +109,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </header>
 
           {/* Post Content */}
-          <div className="prose prose-lg prose-slate max-w-none 
+          <div className="prose prose-lg prose-slate max-w-none
                          prose-headings:text-primary prose-headings:font-bold
-                         prose-p:text-foreground prose-p:leading-relaxed
+                         prose-p:text-foreground prose-p:leading-relaxed prose-p:mb-6
                          prose-strong:text-primary prose-strong:font-semibold
                          prose-a:text-accent prose-a:no-underline hover:prose-a:underline
                          prose-code:text-accent prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded
                          prose-pre:bg-muted prose-pre:border prose-pre:border-border
                          prose-blockquote:border-l-accent prose-blockquote:text-muted-foreground
-                         prose-ul:text-foreground prose-ol:text-foreground
+                         prose-ul:text-foreground prose-ul:mb-6 prose-ol:text-foreground prose-ol:mb-6
                          prose-li:text-foreground">
             <MDXRemote 
               source={post.content}
