@@ -29,7 +29,7 @@ export function HeroSection() {
             className="mb-6 bg-accent/10 text-accent border-accent/50 text-sm font-semibold animate-slide-down"
             style={{ animationDelay: "100ms" }}
           >
-            AI Solutions for Palm Beach Mid-Market Companies
+            Palm Beach Executives Are Turning AI Investments Into 6-Figure Returns
           </Badge>
 
           <div
@@ -52,7 +52,7 @@ export function HeroSection() {
                 &quot;74–85% of AI projects fail to deliver expected value&quot; – Gartner
               </p>
               <p className="text-lg text-muted-foreground">
-                While many AI projects miss the mark, Palm Beach&apos;s smartest executives are unlocking real ROI.
+                We help you be in the successful 15%.
               </p>
             </div>
           </div>
@@ -61,8 +61,13 @@ export function HeroSection() {
             className="text-xl lg:text-2xl text-primary font-medium mb-6 leading-relaxed animate-slide-down"
             style={{ animationDelay: "500ms" }}
           >
-            We help Palm Beach businesses evaluate, implement, and optimize AI solutions to save time, cut costs, and
-            grow revenue—with proven ROI from day one.
+            We partner with Palm Beach County businesses to evaluate, implement, and optimize AI solutions that immediately:
+            <ul className="list-disc list-inside text-left ml-10 text-lg lg:text-xl mt-4">
+              <li><span className="font-bold">Save Time</span> (Automate High-Cost Tasks)</li>
+              <li><span className="font-bold">Cut Costs</span> (Eliminate Operational Waste)</li>
+              <li><span className="font-bold">Grow Revenue</span> (Unlock New Market Opportunities)</li>
+            </ul>
+
           </p>
 
           <p
@@ -89,7 +94,7 @@ export function HeroSection() {
               Get Your Free ROI Assessment
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <p className="text-sm text-muted-foreground">Discover hidden opportunities in 30 minutes</p>
+            <p className="text-sm text-muted-foreground">Discover your 3 highest-return AI opportunities. No sales pitch, just strategic insights you can use immediately.</p>
           </div>
         </div>
       </div>
