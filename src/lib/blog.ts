@@ -12,6 +12,7 @@ export interface BlogPost {
   author?: string;
   tags?: string[];
   content: string;
+  image?: string;
 }
 
 export function getSortedPostsData(): BlogPost[] {
@@ -39,6 +40,7 @@ export function getSortedPostsData(): BlogPost[] {
         excerpt: matterResult.data.excerpt || '',
         author: matterResult.data.author,
         tags: matterResult.data.tags || [],
+        image: matterResult.data.image,
       };
     });
 
@@ -79,5 +81,6 @@ export function getPostData(slug: string): BlogPost {
     excerpt: matterResult.data.excerpt || '',
     author: matterResult.data.author,
     tags: matterResult.data.tags || [],
+    image: matterResult.data.image,
   };
 }

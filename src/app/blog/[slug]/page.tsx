@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
@@ -72,31 +73,36 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Post Header */}
           <header className="mb-12 pb-8 border-b border-border">
-            <div className="mb-4">
-              <time className="text-sm text-muted-foreground">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-              {post.author && (
-                <span className="text-sm text-muted-foreground ml-4">
+            {post.image && (
+              <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
+
+            {post.author && (
+              <div className="mb-4">
+                <span className="text-sm text-muted-foreground">
                   by {post.author}
                 </span>
-              )}
-            </div>
-            
+              </div>
+            )}
+
             <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
               {post.title}
             </h1>
-            
+
             {post.excerpt && (
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">
                 {post.excerpt}
               </p>
             )}
-            
+
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
@@ -119,7 +125,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                          prose-blockquote:border-l-accent prose-blockquote:text-muted-foreground
                          prose-ul:text-foreground prose-ul:my-4 prose-ol:text-foreground prose-ol:my-4
                          prose-li:text-foreground prose-li:my-1
-                         [&_p]:my-4 [&_ul]:my-4 [&_ol]:my-4 [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:mt-6 [&_h3]:mb-3">
+                         [&_p]:my-4 [&_ul]:my-4 [&_ol]:my-4 [&_h1]:mt-12 [&_h1]:mb-6 [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-primary [&_h2]:mt-8 [&_h2]:mb-4 [&_h2]:text-center [&_h3]:mt-6 [&_h3]:mb-3">
             <MDXRemote 
               source={post.content}
               options={{
