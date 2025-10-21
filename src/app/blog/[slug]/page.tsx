@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
@@ -72,31 +73,36 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Post Header */}
           <header className="mb-12 pb-8 border-b border-border">
-            <div className="mb-4">
-              <time className="text-sm text-muted-foreground">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-              {post.author && (
-                <span className="text-sm text-muted-foreground ml-4">
+            {post.image && (
+              <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
+
+            {post.author && (
+              <div className="mb-4">
+                <span className="text-sm text-muted-foreground">
                   by {post.author}
                 </span>
-              )}
-            </div>
-            
+              </div>
+            )}
+
             <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
               {post.title}
             </h1>
-            
+
             {post.excerpt && (
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">
                 {post.excerpt}
               </p>
             )}
-            
+
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (

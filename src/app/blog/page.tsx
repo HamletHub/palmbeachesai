@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   generateBreadcrumbListSchema,
   renderJSONLD
@@ -52,22 +53,25 @@ export default function BlogPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="block group">
-                  <Card className="h-full border-border hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
+                  <Card className="h-full border-border hover:border-accent/40 transition-all duration-300 hover:shadow-lg overflow-hidden">
+                    {post.image && (
+                      <div className="relative w-full h-48 overflow-hidden">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
                     <CardHeader className="pb-4">
-                      <div className="flex justify-between items-start mb-2">
-                        <time className="text-sm text-muted-foreground">
-                          {new Date(post.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                          })}
-                        </time>
-                        {post.author && (
+                      {post.author && (
+                        <div className="mb-2">
                           <Badge variant="secondary" className="text-xs">
                             {post.author}
                           </Badge>
-                        )}
-                      </div>
+                        </div>
+                      )}
                       <CardTitle className="text-xl group-hover:text-accent transition-colors">
                         {post.title}
                       </CardTitle>
