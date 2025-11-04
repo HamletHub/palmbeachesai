@@ -16,8 +16,8 @@
   /* Muted: Sand Dune #846F69 */
   --muted: 13 11% 46%;
   --muted-foreground: 240 33% 13%;
-  /* Accent: Dusty Rose #895665 */
-  --accent: 342 23% 44%;
+  /* Accent: Amber #F59E0B (Alternative: Lime/Chartreuse #84CC16) */
+  --accent: 38 92% 50%;
   --accent-foreground: 0 0% 100%;
   /* Destructive/Danger: Pomegranate #F44336 */
   --destructive: 4 90% 58%;
@@ -67,9 +67,9 @@
   /* Muted: Sand Dune #846F69 - adjusted for dark mode */
   --muted: 13 11% 30%;
   --muted-foreground: 0 0% 70%;
-  /* Accent: Dusty Rose #895665 */
-  --accent: 342 23% 54%;
-  --accent-foreground: 0 0% 98%;
+  /* Accent: Amber #F59E0B (Alternative: Lime/Chartreuse #84CC16) */
+  --accent: 38 92% 55%;
+  --accent-foreground: 240 33% 13%;
   /* Destructive/Danger: Pomegranate #F44336 */
   --destructive: 4 90% 58%;
   --destructive-foreground: 0 0% 98%;
