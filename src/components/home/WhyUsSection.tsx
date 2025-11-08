@@ -130,10 +130,10 @@ export function WhyUsSection() {
                 Get Your Free ROI Assessment
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <p className="text-sm text-muted-foreground">
+{/*               <p className="text-sm text-muted-foreground">
                 or <a href="#" className="text-accent hover:underline">download our Palm Beach Business Guide</a>
               </p>
-            </div>
+ */}            </div>
           </div>
         </div>
       </div>

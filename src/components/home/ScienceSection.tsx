@@ -6,14 +6,14 @@ export function ScienceSection() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
-            The Science Behind Our 94% Success Rate
+            The Science Behind a 94% Success Rate
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Our methodology is backed by research from leading institutions and validated through hundreds of implementations.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Research Validation */}
           <div>
             <h3 className="text-2xl font-bold text-primary mb-6">Research Validation</h3>

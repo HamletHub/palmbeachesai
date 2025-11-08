@@ -18,7 +18,7 @@ export function EmailReveal({ user, domain, className = '' }: EmailRevealProps) 
     return (
       <a 
         href={`mailto:${email}`}
-        className={`text-accent hover:text-accent/80 transition-colors ${className}`}
+        className={`text-foreground hover:text-primary transition-colors ${className}`}
       >
         {email}
       </a>
@@ -28,7 +28,7 @@ export function EmailReveal({ user, domain, className = '' }: EmailRevealProps) 
   return (
     <button
       onClick={() => setShowEmail(true)}
-      className={`inline-flex items-center gap-1 text-accent hover:text-accent/80 transition-colors ${className}`}
+      className={`inline-flex items-center gap-1 text-foreground hover:text-primary transition-colors ${className}`}
     >
       <Mail className="h-4 w-4" />
       <span>Click to reveal email</span>
