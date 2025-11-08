@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { CTAButton } from '@/components/ui/cta-button';
 import {
   generateOrganizationSchema,
   generateBreadcrumbListSchema,
@@ -12,7 +12,6 @@ import {
   renderJSONLD
 } from '@/lib/schemas';
 import { 
-  ArrowRight, 
   CheckCircle, 
   Target, 
   TrendingUp,
@@ -151,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-section-lg">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
@@ -334,7 +333,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Approach */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-section-lg">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
@@ -447,7 +446,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-section-lg">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
@@ -514,10 +513,10 @@ export default function AboutPage() {
       <section className="py-12 bg-accent/5">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+            <Badge variant="outline" className="bg-accent/10 text-accent border-accent/20">
               IBM Certified
             </Badge>
-            <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+            <Badge variant="outline" className="bg-accent/10 text-accent border-accent/20">
               AWS Certified
             </Badge>
           </div>
@@ -546,14 +545,12 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <Button 
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-4 text-lg mb-6"
-            onClick={() => window.open('/contact', '_blank')}
-          >
-            Get Your Free ROI Assessment
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <CTAButton
+            variant="default"
+            size="lg"
+            className="mb-6"
+            trackGoal={false}
+          />
           
           <p className="text-muted-foreground">
             <CheckCircle className="w-4 h-4 inline mr-2 text-accent" />

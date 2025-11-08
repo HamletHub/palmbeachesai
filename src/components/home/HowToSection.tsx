@@ -1,6 +1,6 @@
 export function HowToSection() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-section-lg border-t border-border">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">

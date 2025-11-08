@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { CTAButton } from '@/components/ui/cta-button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -144,11 +145,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <p className="text-muted-foreground mb-2">
                   Ready to implement AI in your business?
                 </p>
-                <Link href="/contact">
-                  <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    Get Your Free ROI Assessment
-                  </Button>
-                </Link>
+                <CTAButton
+                  variant="inline"
+                  openInNewTab={false}
+                  showIcon={false}
+                  trackGoal={false}
+                />
               </div>
               
               <div className="text-center sm:text-right">

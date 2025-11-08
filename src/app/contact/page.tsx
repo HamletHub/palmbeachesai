@@ -53,9 +53,14 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Contact Information */}
-            <div className="space-y-8">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16 items-center">
+            {/* Contact Form - First on mobile, second on desktop */}
+            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+              <ContactForm />
+            </div>
+
+            {/* Contact Information - Second on mobile, first on desktop */}
+            <div className="space-y-8 order-2 lg:order-1">
               <div>
                 <h2 className="text-2xl font-bold text-primary mb-4">
                   Let&apos;s Start a Conversation
@@ -96,11 +101,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="flex justify-center lg:justify-end">
-              <ContactForm />
             </div>
           </div>
         </div>

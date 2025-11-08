@@ -29,7 +29,7 @@ export default function BlogPage() {
       <Header currentPage="blog" />
 
       {/* Blog Header */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-section-lg">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
             AI Insights & Industry Updates

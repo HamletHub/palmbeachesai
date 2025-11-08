@@ -19,7 +19,7 @@ export function Footer() {
               <p>Suite #328, PO Box 403</p>
               <p>Palm Beach, FL 33480</p>
               <p className="pt-2">
-                <a href="tel:561-220-7004" className="text-accent hover:text-accent/80 transition-colors">
+                <a href="tel:561-220-7004" className="text-foreground hover:text-primary transition-colors">
                   561-220-7004
                 </a>
               </p>

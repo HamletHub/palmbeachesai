@@ -40,7 +40,7 @@ export function DetailedSolutionsSection() {
               </ul>
 
               <div className="bg-muted/30 rounded-lg p-4 border border-muted">
-                <h5 className="font-semibold text-primary mb-2">Real Implementation:</h5>
+                <h5 className="font-semibold text-primary mb-2">Implementation:</h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   A multi-location accounting firm automated their invoicing system—client data extraction, payment matching, and exception flagging reduced manual work by 60% while eliminating all invoice errors.
                 </p>
@@ -73,7 +73,7 @@ export function DetailedSolutionsSection() {
               </ul>
 
               <div className="bg-muted/30 rounded-lg p-4 border border-muted">
-                <h5 className="font-semibold text-primary mb-2">Real Implementation:</h5>
+                <h5 className="font-semibold text-primary mb-2">Implementation:</h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   A service company deployed our customer AI system. Within 90 days, 45% of customer interactions were automated, leading to 20% higher customer retention and $180K annual savings in staffing costs.
                 </p>
@@ -106,7 +106,7 @@ export function DetailedSolutionsSection() {
               </ul>
 
               <div className="bg-muted/30 rounded-lg p-4 border border-muted">
-                <h5 className="font-semibold text-primary mb-2">Real Implementation:</h5>
+                <h5 className="font-semibold text-primary mb-2">Implementation:</h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   A retail chain used our forecasting AI to analyze sales patterns and local market data. Result: 15% less overstock, 10% fewer stockouts, 12% cash flow improvement, and $320K additional annual profit.
                 </p>

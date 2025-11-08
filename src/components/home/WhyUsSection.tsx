@@ -1,8 +1,7 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Target, Shield, Clock, MapPin, Building2, Users, ArrowRight } from 'lucide-react';
-import { trackEvent, trackBusinessGoal } from '@/components/GoogleTagManager';
+import { CTAButton } from '@/components/ui/cta-button';
+import { Target, Shield, Clock, MapPin, Building2, Users } from 'lucide-react';
 
 export function WhyUsSection() {
   return (
@@ -114,26 +113,16 @@ export function WhyUsSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
+              <CTAButton
+                ctaLocation="final_section"
+                estimatedValue={2500}
+                variant="default"
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-4"
-                onClick={() => {
-                  trackEvent('cta_click', {
-                    cta_location: 'final_section',
-                    cta_text: 'Get Your Free ROI Assessment',
-                    estimated_value: 2500
-                  });
-                  trackBusinessGoal('roi_assessment_interest', 2500);
-                  window.open('/contact', '_blank');
-                }}
-              >
-                Get Your Free ROI Assessment
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <p className="text-sm text-muted-foreground">
+              />
+{/*               <p className="text-sm text-muted-foreground">
                 or <a href="#" className="text-accent hover:underline">download our Palm Beach Business Guide</a>
               </p>
-            </div>
+ */}            </div>
           </div>
         </div>
       </div>
