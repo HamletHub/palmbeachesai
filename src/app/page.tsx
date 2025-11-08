@@ -14,7 +14,7 @@ const ProblemSection = dynamic(() => import('@/components/home/ProblemSection').
 });
 
 const SolutionSection = dynamic(() => import('@/components/home/SolutionSection').then(mod => ({ default: mod.SolutionSection })), {
-  loading: () => <div className="py-20 bg-muted/30 min-h-[400px]" />
+  loading: () => <div className="py-20 bg-section-lg min-h-[400px]" />
 });
 
 const DetailedSolutionsSection = dynamic(() => import('@/components/home/DetailedSolutionsSection').then(mod => ({ default: mod.DetailedSolutionsSection })), {
@@ -22,7 +22,7 @@ const DetailedSolutionsSection = dynamic(() => import('@/components/home/Detaile
 });
 
 const HowToSection = dynamic(() => import('@/components/home/HowToSection').then(mod => ({ default: mod.HowToSection })), {
-  loading: () => <div className="py-20 bg-muted/30 min-h-[400px]" />
+  loading: () => <div className="py-20 bg-section-lg min-h-[400px]" />
 });
 
 const ProofSection = dynamic(() => import('@/components/home/ProofSection').then(mod => ({ default: mod.ProofSection })), {
@@ -30,7 +30,7 @@ const ProofSection = dynamic(() => import('@/components/home/ProofSection').then
 });
 
 const ScienceSection = dynamic(() => import('@/components/home/ScienceSection').then(mod => ({ default: mod.ScienceSection })), {
-  loading: () => <div className="py-20 bg-muted/30 min-h-[400px]" />
+  loading: () => <div className="py-20 bg-section-lg min-h-[400px]" />
 });
 
 const WhyUsSection = dynamic(() => import('@/components/home/WhyUsSection').then(mod => ({ default: mod.WhyUsSection })), {

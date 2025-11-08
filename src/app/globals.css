@@ -16,6 +16,8 @@
   /* Muted: Sand Dune #846F69 */
   --muted: 13 11% 46%;
   --muted-foreground: 240 33% 13%;
+  /* Section Light Grey: Lighter muted for section backgrounds */
+  --section-lg: 13 11% 46% / 0.1;
   /* Accent: Amber #F59E0B (Alternative: Lime/Chartreuse #84CC16) */
   --accent: 38 92% 50%;
   --accent-foreground: 0 0% 100%;
@@ -108,6 +110,7 @@
 @theme {
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-section-lg: hsl(var(--section-lg));
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
   --color-primary: hsl(var(--primary));
