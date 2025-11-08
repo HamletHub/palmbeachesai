@@ -513,10 +513,10 @@ export default function AboutPage() {
       <section className="py-12 bg-accent/5">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+            <Badge variant="outline" className="bg-accent/10 text-accent border-accent/20">
               IBM Certified
             </Badge>
-            <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+            <Badge variant="outline" className="bg-accent/10 text-accent border-accent/20">
               AWS Certified
             </Badge>
           </div>

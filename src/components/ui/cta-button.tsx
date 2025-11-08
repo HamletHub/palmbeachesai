@@ -91,6 +91,7 @@ export function CTAButton({
   if (openInNewTab) {
     return (
       <Button
+        variant="outline"
         size={size}
         className={baseClasses}
         onClick={() => {
@@ -105,7 +106,7 @@ export function CTAButton({
 
   return (
     <Link href={href}>
-      <Button size={size} className={baseClasses} onClick={handleClick}>
+      <Button variant="outline" size={size} className={baseClasses} onClick={handleClick}>
         {buttonContent}
       </Button>
     </Link>

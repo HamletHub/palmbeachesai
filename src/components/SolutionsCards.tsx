@@ -43,7 +43,7 @@ export function SolutionsCards() {
     <section id="solutions" className="py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge variant="default" className="mb-6 px-4 py-2 text-sm font-medium bg-accent text-accent-foreground">
+          <Badge variant="accent" className="mb-6 px-4 py-2 text-sm font-medium">
             Our Solutions
           </Badge>
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">

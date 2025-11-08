@@ -31,7 +31,7 @@ export function SocialProofSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Time Savings Stat */}
           <Card
-            className={`group text-center border-accent/20 hover:border-accent/40 transition-all duration-700 hover:shadow-lg hover:scale-[1.05] ${
+            className={`group text-center bg-accent/5 border-accent/20 hover:border-accent/40 transition-all duration-700 hover:shadow-lg hover:scale-[1.05] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "0ms" }}
@@ -57,7 +57,7 @@ export function SocialProofSection() {
 
           {/* Support Cost Reduction Stat */}
           <Card
-            className={`group text-center border-accent/20 hover:border-accent/40 transition-all duration-700 hover:shadow-lg hover:scale-[1.05] ${
+            className={`group text-center bg-accent/5 border-accent/20 hover:border-accent/40 transition-all duration-700 hover:shadow-lg hover:scale-[1.05] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "150ms" }}
@@ -89,7 +89,7 @@ export function SocialProofSection() {
 
           {/* Inventory Efficiency Stat */}
           <Card
-            className={`group text-center border-accent/20 hover:border-accent/40 transition-all duration-700 hover:shadow-lg hover:scale-[1.05] ${
+            className={`group text-center bg-accent/5 border-accent/20 hover:border-accent/40 transition-all duration-700 hover:shadow-lg hover:scale-[1.05] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "300ms" }}
