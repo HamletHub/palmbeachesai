@@ -100,6 +100,31 @@
   --sidebar-ring: 199 89% 58%;
 }
 
+/* 
+ * @theme directive is valid in Tailwind CSS v4
+ * This registers theme colors with Tailwind so opacity utilities (e.g., bg-muted/30, bg-accent/90) work correctly
+ * The linter may show a warning, but this is intentional and required for Tailwind v4
+ */
+@theme {
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
 @layer base {
   * {
     border-color: hsl(var(--border));

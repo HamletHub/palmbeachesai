@@ -17,9 +17,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const hasCustomBg = classNameStr.includes('bg-accent');
     
     const variants = {
-      default: hasCustomBg ? 'text-primary-foreground' : 'bg-primary text-primary-foreground hover:bg-primary/90',
+      default: hasCustomBg ? '' : 'bg-primary text-primary-foreground hover:bg-primary/90',
       outline: hasCustomBg ? 'border border-input' : 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-      secondary: hasCustomBg ? 'text-secondary-foreground' : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+      secondary: hasCustomBg ? '' : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
     };
 
     const sizes = {
