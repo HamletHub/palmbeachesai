@@ -15,11 +15,11 @@ export function Header({ hideContactNav = false, hideCtaButton = false, currentP
   return (
     <header className="border-b border-border bg-background/95 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-2 md:gap-4">
           {/* Logo and Motto */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-shrink">
             <Logo variant="horizontal" size="sm" logoPosition="left" />
-            <div className="hidden md:block text-lg font-bold text-accent">
+            <div className="hidden md:block text-lg font-bold text-accent whitespace-nowrap">
               AI → ROI
             </div>
           </div>

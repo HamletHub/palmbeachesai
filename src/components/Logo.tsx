@@ -35,8 +35,8 @@ export function Logo({
     : { width: 80, height: 80 };
 
   return (
-    <div className={`flex items-center gap-3 ${containerClasses[logoPosition]}`}>
-      <span className="text-lg md:text-xl font-bold text-primary">
+    <div className={`flex items-center gap-2 md:gap-3 flex-wrap ${containerClasses[logoPosition]}`}>
+      <span className="text-lg md:text-xl font-bold text-primary whitespace-normal">
         PALM BEACHES
       </span>
       <Image
