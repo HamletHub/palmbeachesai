@@ -12,7 +12,6 @@ import {
   renderJSONLD
 } from '@/lib/schemas';
 import { 
-  ArrowRight, 
   CheckCircle, 
   Target, 
   TrendingUp,

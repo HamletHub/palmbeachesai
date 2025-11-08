@@ -2,6 +2,7 @@ import { getPostData, getAllPostSlugs } from '@/lib/blog';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { CTAButton } from '@/components/ui/cta-button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
