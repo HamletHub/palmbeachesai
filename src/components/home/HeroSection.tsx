@@ -45,7 +45,7 @@ export function HeroSection() {
           </h1>
 
           <div className="animate-slide-down" style={{ animationDelay: "400ms" }}>
-            <div className="bg-muted/50 rounded-xl p-6 mb-6 border-2 border-accent/30 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-muted/30 rounded-xl p-6 mb-6 border-2 border-accent/30 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
               <p className="text-lg lg:text-xl font-semibold text-primary mb-2">
                 &quot;74–85% of AI projects fail to deliver expected value&quot; – Gartner
               </p>

@@ -13,7 +13,7 @@ const HighlightBox = forwardRef<HTMLDivElement, HighlightBoxProps>(
       <div
         ref={ref}
         className={cn(
-          'bg-muted/50 rounded-xl p-8 border-2 border-muted text-center transition-all duration-700 hover:border-destructive/30 hover:shadow-lg',
+          'bg-muted/30 rounded-xl p-8 border-2 border-muted text-center transition-all duration-700 hover:border-destructive/30 hover:shadow-lg',
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
           className
         )}
