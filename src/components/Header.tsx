@@ -19,7 +19,7 @@ export function Header({ hideContactNav = false, hideCtaButton = false, currentP
           {/* Logo and Motto */}
           <div className="flex items-center gap-3">
             <Logo variant="horizontal" size="sm" logoPosition="left" />
-            <div className="text-lg font-bold text-accent">
+            <div className="hidden md:block text-lg font-bold text-accent">
               AI → ROI
             </div>
           </div>
@@ -70,10 +70,10 @@ export function Header({ hideContactNav = false, hideCtaButton = false, currentP
             </div>
             {!hideCtaButton && (
               <Button 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium text-xs md:text-sm px-2 md:px-4 py-2 leading-tight"
                 onClick={() => window.open('/contact', '_blank')}
               >
-                Get Your Free ROI Assessment
+                <span className="text-center">Get Your Free ROI Assessment</span>
               </Button>
             )}
           </div>
