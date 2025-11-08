@@ -1,13 +1,26 @@
 import { HTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import { clsx } from 'clsx';
 
 const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
-    // twMerge will handle conflicting classes - className passed last will override
+    // Check if className contains a custom background (accent, primary, secondary, etc.)
+    // Convert className to string using clsx to handle all formats
+    const classNameStr = clsx(className);
+    const hasCustomBg = classNameStr.includes('bg-accent') || 
+                       classNameStr.includes('bg-primary') || 
+                       classNameStr.includes('bg-secondary') ||
+                       classNameStr.includes('bg-destructive') ||
+                       classNameStr.includes('bg-muted');
+    
+    const baseClasses = hasCustomBg
+      ? 'rounded-lg border text-card-foreground shadow-sm'
+      : 'rounded-lg border bg-card text-card-foreground shadow-sm';
+    
     return (
       <div
         ref={ref}
-        className={cn('rounded-lg border bg-card text-card-foreground shadow-sm', className)}
+        className={cn(baseClasses, className)}
         {...props}
       />
     );

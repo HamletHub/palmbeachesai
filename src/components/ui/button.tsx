@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import { clsx } from 'clsx';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'outline' | 'secondary';
@@ -10,10 +11,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'md', ...props }, ref) => {
     const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50';
     
+    // Check if className contains a custom background (accent specifically)
+    // Convert className to string using clsx to handle all formats
+    const classNameStr = clsx(className);
+    const hasCustomBg = classNameStr.includes('bg-accent');
+    
     const variants = {
-      default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-      outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-      secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+      default: hasCustomBg ? 'text-primary-foreground' : 'bg-primary text-primary-foreground hover:bg-primary/90',
+      outline: hasCustomBg ? 'border border-input' : 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+      secondary: hasCustomBg ? 'text-secondary-foreground' : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
     };
 
     const sizes = {
