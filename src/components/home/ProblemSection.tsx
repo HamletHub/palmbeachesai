@@ -1,6 +1,7 @@
 "use client"
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { HighlightBox } from "@/components/ui/highlight-box"
 import { useState } from "react"
 import { useIntersectionObserver } from "@/lib/useIntersectionObserver"
 import { useCountUp } from "@/lib/useCountUp"
@@ -162,17 +163,10 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <div
-          className={`bg-muted/50 rounded-xl p-8 border-2 border-muted text-center transition-all duration-700 hover:border-destructive/30 hover:shadow-lg ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ transitionDelay: "450ms" }}
-        >
-          <p className="text-lg lg:text-xl text-primary font-medium leading-relaxed">
-            In Palm Beach&apos;s ultra-competitive market, failed AI investments don&apos;t just drain budgets—you watch
-            competitors surge ahead while you&apos;re left explaining empty promises to your board.
-          </p>
-        </div>
+        <HighlightBox isVisible={isVisible} transitionDelay={450}>
+          In Palm Beach&apos;s ultra-competitive market, failed AI investments don&apos;t just drain budgets—you watch
+          competitors surge ahead while you&apos;re left explaining empty promises to your board.
+        </HighlightBox>
       </div>
     </section>
   )
