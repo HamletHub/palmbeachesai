@@ -14,7 +14,7 @@ export function SocialProofSection() {
 
   return (
     <section
-      className="py-16 bg-section-lg"
+      className="py-16 bg-section-lg border-t border-border"
       ref={sectionRef}
       style={{ willChange: isVisible ? "auto" : "opacity, transform" }}
     >

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function SolutionSection() {
   return (
-    <section id="solution" className="py-20 bg-section-lg">
+    <section id="solution" className="py-20 bg-section-lg border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
