@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { CTAButton } from '@/components/ui/cta-button';
 import {
   generateOrganizationSchema,
   generateBreadcrumbListSchema,
@@ -546,14 +546,12 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <Button 
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-4 text-lg mb-6"
-            onClick={() => window.open('/contact', '_blank')}
-          >
-            Get Your Free ROI Assessment
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <CTAButton
+            variant="default"
+            size="lg"
+            className="mb-6"
+            trackGoal={false}
+          />
           
           <p className="text-muted-foreground">
             <CheckCircle className="w-4 h-4 inline mr-2 text-accent" />

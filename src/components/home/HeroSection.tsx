@@ -1,9 +1,7 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import { trackEvent, trackBusinessGoal } from "@/components/GoogleTagManager"
+import { CTAButton } from "@/components/ui/cta-button"
 
 export function HeroSection() {
   return (
@@ -78,22 +76,12 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col items-center gap-4 animate-slide-down" style={{ animationDelay: "700ms" }}>
-            <Button
+            <CTAButton
+              ctaLocation="hero_section"
+              estimatedValue={2500}
+              variant="default"
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all"
-              onClick={() => {
-                trackEvent("cta_click", {
-                  cta_location: "hero_section",
-                  cta_text: "Get Your Free ROI Assessment",
-                  estimated_value: 2500,
-                })
-                trackBusinessGoal("roi_assessment_interest", 2500)
-                window.open("/contact", "_blank")
-              }}
-            >
-              Get Your Free ROI Assessment
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            />
             <p className="text-sm text-muted-foreground">Discover your 3 highest-return AI opportunities. No sales pitch, just strategic insights you can use immediately.</p>
           </div>
         </div>

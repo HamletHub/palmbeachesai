@@ -1,7 +1,7 @@
 'use client';
 
 import { Logo } from '@/components/Logo';
-import { Button } from '@/components/ui/button';
+import { CTAButton } from '@/components/ui/cta-button';
 import { Phone } from 'lucide-react';
 import Link from 'next/link';
 
@@ -69,12 +69,11 @@ export function Header({ hideContactNav = false, hideCtaButton = false, currentP
               </a>
             </div>
             {!hideCtaButton && (
-              <Button 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium text-xs md:text-sm px-2 md:px-4 py-2 leading-tight"
-                onClick={() => window.open('/contact', '_blank')}
-              >
-                <span className="text-center">Get Your Free ROI Assessment</span>
-              </Button>
+              <CTAButton
+                variant="header"
+                trackGoal={false}
+                showIcon={false}
+              />
             )}
           </div>
         </div>
