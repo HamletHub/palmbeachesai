@@ -64,8 +64,8 @@ export function Header({ hideContactNav = false, hideCtaButton = false, currentP
           <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center gap-2 text-muted-foreground">
               <Phone className="w-4 h-4" />
-              <a href="tel:561-220-7004" className="hover:text-foreground font-medium transition-colors">
-                (561) 220-7004
+              <a href="tel:561-652-1200" className="hover:text-foreground font-medium transition-colors">
+                (561) 652-1200
               </a>
             </div>
             {!hideCtaButton && (

@@ -92,7 +92,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium">Phone:</p>
-                      <p>561-220-7004</p>
+                      <p>561-652-1200</p>
                     </div>
                     <div>
                       <p className="font-medium">Email:</p>

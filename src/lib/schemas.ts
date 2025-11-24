@@ -145,7 +145,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     logo: "https://palmbeachesai.com/images/pbailogo.svg",
     description: "AI solutions that guarantee measurable business value and ROI for Palm Beach County businesses. We help mid-market companies evaluate, implement, and optimize AI solutions with proven results.",
     email: "info@palmbeachesai.com",
-    telephone: "561-220-7004",
+    telephone: "561-652-1200",
     address: {
       "@type": "PostalAddress",
       streetAddress: "340 Royal Poinciana Way Suite #328, PO Box 403",
@@ -171,7 +171,7 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
     logo: "https://palmbeachesai.com/images/pbailogo.svg",
     description: "AI solutions that guarantee measurable business value and ROI for Palm Beach County businesses. Specializing in automation, customer experience optimization, and data analytics for mid-market companies.",
     email: "info@palmbeachesai.com",
-    telephone: "561-220-7004",
+    telephone: "561-652-1200",
     address: {
       "@type": "PostalAddress",
       streetAddress: "340 Royal Poinciana Way Suite #328, PO Box 403",
